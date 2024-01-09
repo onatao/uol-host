@@ -79,7 +79,6 @@ public class CodenameService {
                 String codename = codenameElement.getTextContent();
                 this.justiceLeagueCodenameList.add(codename);
             }
-
         } catch(Exception e) {
             e.printStackTrace();
         }

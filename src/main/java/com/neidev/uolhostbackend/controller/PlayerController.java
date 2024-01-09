@@ -1,18 +1,17 @@
-package com.neidev.uolhostbackend.controller;
+             package com.neidev.uolhostbackend.controller;
 
 import com.neidev.uolhostbackend.domain.core.player.json.PlayerForm;
 import com.neidev.uolhostbackend.domain.core.player.model.Player;
 import com.neidev.uolhostbackend.service.PlayerService;
+import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
-@RestController
+             @RestController
 @RequestMapping("/api/player")
 public class PlayerController {
 
@@ -26,5 +25,10 @@ public class PlayerController {
     public ResponseEntity<Player> createPlayer(@RequestBody @Valid PlayerForm data) {
         var newPlayer = playerService.createPlayer(data);
         return new ResponseEntity<>(newPlayer, HttpStatus.CREATED);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Player>> getAllPlayers() {
+        return new ResponseEntity<>(playerService.findAll(), HttpStatus.OK);
     }
 }
