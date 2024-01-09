@@ -1,7 +1,7 @@
 package com.neidev.uolhostbackend.domain.core.player.model;
 
 import com.neidev.uolhostbackend.domain.core.player.json.PlayerForm;
-import com.neidev.uolhostbackend.enums.GroupType;
+import com.neidev.uolhostbackend.domain.enums.GroupType;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

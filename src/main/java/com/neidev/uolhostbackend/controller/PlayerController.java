@@ -3,6 +3,7 @@ package com.neidev.uolhostbackend.controller;
 import com.neidev.uolhostbackend.domain.core.player.json.PlayerForm;
 import com.neidev.uolhostbackend.domain.core.player.model.Player;
 import com.neidev.uolhostbackend.service.PlayerService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +24,7 @@ public class PlayerController {
 
     @PostMapping
     public ResponseEntity<Player> createPlayer(@RequestBody @Valid PlayerForm data) {
-        Player newPlayer = playerService.createPlayer(data);
-        return ResponseEntity.ok(newPlayer);
+        var newPlayer = playerService.createPlayer(data);
+        return new ResponseEntity<>(newPlayer, HttpStatus.CREATED);
     }
 }

@@ -19,6 +19,7 @@ public class PlayerService {
     public Player createPlayer(PlayerForm data) {
         var playerToPersist = new Player(data);
         return playerRepository.save(playerToPersist);
+
     }
 
 }

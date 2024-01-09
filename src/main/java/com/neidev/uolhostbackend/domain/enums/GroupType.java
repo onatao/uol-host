@@ -1,4 +1,4 @@
-package com.neidev.uolhostbackend.enums;
+package com.neidev.uolhostbackend.domain.enums;
 
 public enum GroupType {
 
